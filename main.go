@@ -15,10 +15,8 @@ func main() {
 		handleError(errors.New("no directory path provided"))
 	}
 	dirPath := args[0]
-	// check that dirpath exists
 	fileInfo, err := os.Stat(dirPath)
 	handleError(err)
-	// check that dirpath is a directory
 	if !fileInfo.IsDir() {
 		handleError(errors.New(dirPath + " is not a directory"))
 	}
